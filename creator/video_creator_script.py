@@ -33,7 +33,11 @@ def create_video(input_text: str) -> None:
         # Очищаем кадр
         frame.fill(0)
 
-        x -= len(input_text)  # Скорость бегущей строки
+        # Скорость бегущей строки
+        if len(input_text) < 3:
+            x -= len(input_text)
+        else:
+            x -= int(len(input_text) / 3)
 
         # Используем Pillow для наложения текста
         img_pil = Image.fromarray(frame)
