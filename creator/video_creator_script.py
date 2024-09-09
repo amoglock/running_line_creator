@@ -4,7 +4,6 @@ from PIL import ImageFont, Image, ImageDraw
 
 def create_video(input_text: str) -> None:
 
-
     # Определяем размер видео
     width, height = 100, 100
 
@@ -34,7 +33,7 @@ def create_video(input_text: str) -> None:
         # Очищаем кадр
         frame.fill(0)
 
-        x -= int(len(input_text) / 3)  # Скорость бегущей строки
+        x -= len(input_text)  # Скорость бегущей строки
 
         # Используем Pillow для наложения текста
         img_pil = Image.fromarray(frame)
